@@ -19,7 +19,7 @@ def get_date(idx):
         if day < 30:
             day += 1
         else:
-            if month_i == 1 or month_i == 2 and day == 30:
+            if (month_i == 1 or month_i == 2) and day == 30:
                 day += 1
             else:
                 month_i += 1
@@ -52,12 +52,14 @@ for line in data:
             prepping.append(time_spent)
 
 #graph it
-ind = np.arange(len(data))
-width = 0.35
+plt.figure(figsize=(13,6))
+width = 0.4
 plt.ylabel("Time spent (minutes)")
 plt.title("Job hunting - Time Spent")
+plt.ylim(0, 250)
+plt.yticks(np.arange(0, 251, 30))
+ind = np.arange(len(data))
 plt.xticks(np.array(date_ticks_ind), date_ticks)
-plt.yticks(np.arange(0, 300, 30))
 
 p1 = plt.bar(ind, prepping, width)
 p2 = plt.bar(ind, interviewing, width, bottom=prepping)
