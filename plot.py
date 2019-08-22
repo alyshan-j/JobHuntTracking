@@ -6,12 +6,14 @@ import os
 files = os.listdir(os.getcwd() + "/sheets")
 #get data
 data = []
-for filename in sorted(files):
+#filename: "Job Hunt Tracking - SheetX.csv"
+files = sorted(files, key=lambda x: int(x[25:x.index(".")]))
+for filename in files:
     with open("sheets/" + filename) as f:
         for i, line in enumerate(f):
             if i > 1 and i < 9:
                 data.append(line)
-
+print(data)
 def get_date(idx):
     START = "June 10th"
     month_i, day = 0, 10
@@ -50,7 +52,6 @@ for line in data:
             interviewing.append(time_spent)
         if i == 3:
             prepping.append(time_spent)
-
 #graph it
 plt.figure(figsize=(13,6))
 width = 0.4
