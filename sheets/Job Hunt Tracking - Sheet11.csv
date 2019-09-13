@@ -4,11 +4,11 @@ Monday,,,,
 Tuesday,,,,
 Wednesday,,120,90,
 Thursday,,,,
-Friday,,,,
-Saturday,,,,
-Sunday,,,,
+Friday,,,45,
+Saturday,75,,,
+Sunday,,,45,
 ,,,,
-Total:,0,120,90,
+Total:,75,120,180,
 ,,,,
-,,,Weekly total,210
-,,,Total time hunting,6360
+,,,Weekly total,375
+,,,Total time hunting,6525
